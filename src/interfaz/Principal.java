@@ -72,6 +72,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(txtresultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 90, -1));
 
         cmdcalcular.setText("CALCULAR");
+        cmdcalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdcalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdcalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
 
         cmdborrar.setText("BORRAR");
@@ -98,6 +103,22 @@ public class Principal extends javax.swing.JFrame {
     private void txtresultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtresultadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtresultadoActionPerformed
+
+    private void cmdcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdcalcularActionPerformed
+        String num1,num2,res;
+        int n1,n2,suma;
+        
+        num1 = txtnumerouno.getText();
+        num2 = txtnumerodos.getText();
+        
+        n1 = Integer.parseInt(num1);
+        n2 = Integer.parseInt(num2);
+        
+        suma = n1+n2; 
+        res = String.valueOf(suma);
+        
+        txtresultado.setText(res);
+    }//GEN-LAST:event_cmdcalcularActionPerformed
 
     /**
      * @param args the command line arguments
