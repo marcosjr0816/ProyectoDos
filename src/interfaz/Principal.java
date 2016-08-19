@@ -59,6 +59,11 @@ public class Principal extends javax.swing.JFrame {
                 txtnumerounoActionPerformed(evt);
             }
         });
+        txtnumerouno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnumerounoKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtnumerouno, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 70, -1));
 
         jLabel3.setText("NUMERO DOS");
@@ -67,6 +72,11 @@ public class Principal extends javax.swing.JFrame {
         txtnumerodos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnumerodosActionPerformed(evt);
+            }
+        });
+        txtnumerodos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtnumerodosKeyTyped(evt);
             }
         });
         jPanel1.add(txtnumerodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 70, -1));
@@ -141,7 +151,14 @@ public class Principal extends javax.swing.JFrame {
         n1 = Double.parseDouble(txtnumerouno.getText());
         n2 = Double.parseDouble(txtnumerodos.getText());
         op = cmboperacion.getSelectedIndex();
-            
+        
+          if(op == 3 && n2 == 0){
+              JOptionPane.showMessageDialog(this, "No digite cero en el segundo numero","Error",JOptionPane.ERROR_MESSAGE);
+              txtnumerodos.requestFocusInWindow();
+              txtnumerodos.selectAll();
+          }else {
+              
+          
         switch(op){
             case 0:
                 resultado = n1+n2;
@@ -159,7 +176,7 @@ public class Principal extends javax.swing.JFrame {
          
         res = String.valueOf(resultado);
         txtresultado.setText(res);
-        
+          }
         }
     }//GEN-LAST:event_cmdcalcularActionPerformed
 
@@ -175,6 +192,26 @@ public class Principal extends javax.swing.JFrame {
         txtnumerouno.requestFocusInWindow();
         cmboperacion.setSelectedIndex(0);
     }//GEN-LAST:event_cmdborrarActionPerformed
+
+    private void txtnumerounoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumerounoKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume(); 
+          } 
+    }//GEN-LAST:event_txtnumerounoKeyTyped
+
+    private void txtnumerodosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnumerodosKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume(); 
+          } 
+    }//GEN-LAST:event_txtnumerodosKeyTyped
 
     /**
      * @param args the command line arguments
