@@ -29,27 +29,75 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtnumerouno = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtnumerodos = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtresultado = new javax.swing.JTextField();
+        cmdcalcular = new javax.swing.JButton();
+        cmdborrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
+        jLabel1.setText("SUMA DE DOS NUMEROS");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, -1));
+
+        jLabel2.setText("NUMERO UNO");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jPanel1.add(txtnumerouno, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 70, -1));
+
+        jLabel3.setText("NUMERO DOS");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
+
+        txtnumerodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtnumerodosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtnumerodos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 70, -1));
+
+        jLabel4.setText("RESULTADO");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, -1, -1));
+
+        txtresultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtresultadoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtresultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 90, -1));
+
+        cmdcalcular.setText("CALCULAR");
+        jPanel1.add(cmdcalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
+
+        cmdborrar.setText("BORRAR");
+        jPanel1.add(cmdborrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 320, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtnumerodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnumerodosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtnumerodosActionPerformed
+
+    private void txtresultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtresultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtresultadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,6 +135,15 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdborrar;
+    private javax.swing.JButton cmdcalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtnumerodos;
+    private javax.swing.JTextField txtnumerouno;
+    private javax.swing.JTextField txtresultado;
     // End of variables declaration//GEN-END:variables
 }
